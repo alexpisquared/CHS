@@ -334,3 +334,4 @@ ASALocalRun/
 .localhistory/
 *.cache
 ChsDal/obj/Debug/netcoreapp3.0/ChsDal.csproj.FileListAbsolute.txt
+*.cache
