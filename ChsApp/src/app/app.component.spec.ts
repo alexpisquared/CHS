@@ -18,13 +18,13 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ChsApp'`, () => {
+  it(`should have as titleBig 'ChsApp'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Celebrity Hologram Store');
+    expect(app.titleBig).toEqual('Celebrity Hologram Store');
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should render titleBig in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;

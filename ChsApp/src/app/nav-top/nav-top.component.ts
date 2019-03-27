@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-top.component.sass']
 })
 export class NavTopComponent implements OnInit {
+  themedIcon = './favicon.ico';
+  titleBig = 'Celebrity Hologram Store';
+  titleTla = 'CHS';
+  userName = 'Unknown';
+  isLoading: boolean; // used for showing Loading spinner during transition between pages
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

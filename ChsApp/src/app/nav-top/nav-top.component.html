@@ -1,20 +1,25 @@
 <mat-toolbar color="accent">
-  <span>Application Title</span>
+  <button mat-button>
+    <img height="70" alt="CHS Logo" src="{{ themedIcon }}" />
+    <span style="font-size:1.2cm;">&nbsp; {{ titleBig }} </span>
+  </button>
+  
+  <span class="horizontalSpacer"></span> <span class="horizontalSpacer"></span> <span class="horizontalSpacer"></span>
   <span class="example-fill-remaining-space"></span>
-  <span>Right Aligned Text</span>
 
+  <a routerLink="/">Home</a>
+  <a routerLink="/clist">Celebrities</a>
+  <a routerLink="/about">About</a>
 
-      <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/alexpigida/">
-        <img height="20" alt="Alex on LinkedIn" src="\assets\AlexTiny_LinkedIn.png" />
-      </a>
-      <!-- <a routerLink="/" class="logo">{{ appTitle }}</a> -->
-      <nav>
-        <ul>
-          <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/clist">Celebrities</a></li>
-          <li><a routerLink="/about">About</a></li>
-        </ul>
-      </nav>
-
-
+  <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/alexpigida/">
+    <img height="20" alt="Alex on LinkedIn" src="\assets\AlexTiny_LinkedIn.png" />
+  </a>
+  <!-- <a routerLink="/" class="logo">{{ appTitle }}</a> -->
+  <nav>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/clist">Celebrities</a></li>
+      <li><a routerLink="/about">About</a></li>
+    </ul>
+  </nav>
 </mat-toolbar>

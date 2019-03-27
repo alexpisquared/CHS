@@ -8,9 +8,9 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'Celebrity Hologram Store';
+  titleBig = 'Celebrity Hologram Store';
   titleTla = 'CHS';
-  userName: string;
+  userName = 'Unknown';
   isLoading: boolean; // used for showing Loading spinner during transition between pages
   isLoggingToServer: boolean;
   private subscription: Subscription;
