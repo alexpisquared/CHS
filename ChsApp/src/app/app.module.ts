@@ -9,10 +9,11 @@ import { NavTopComponent } from './nav-top/nav-top.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { CelebrityListComponent } from './celebrity-list/celebrity-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, NavTopComponent, AboutComponent, HomeComponent, CelebrityListComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })

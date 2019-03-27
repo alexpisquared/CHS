@@ -1,3 +1,14 @@
-<p>
-  celebrity-list works!
-</p>
+<div style="text-align:center">
+  <h1>Welcome to ...here!</h1>
+  
+  <h2>Celebrities</h2>
+    <button mat-button (click)="getCelebs()" matTooltip="gets the celebrities">Refresh</button>
+
+  <ul *ngIf="users">
+    <li *ngFor="let user of users.data">
+      <img [src]="user.avatar">
+      <p>{{ user.first_name }} {{ user.last_name }}</p>
+    </li>
+  </ul>
+
+</div>
