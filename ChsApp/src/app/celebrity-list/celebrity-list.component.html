@@ -5,8 +5,14 @@
 <h2 style="margin: 25px 100px;">Celebrities</h2>
 
 <ul *ngIf="celebs" style="margin: 0px 100px;">
-  <li *ngFor="let user of celebs.data">
-    <img [src]="user.avatar" />
-    <p>{{ user.first_name }} {{ user.last_name }}</p>
+  <li *ngFor="let celeb of celebs">
+    <img [src]="celeb.HologramUrl" />
+    <p>{{ celeb.FirstName }} {{ celeb.LastName }}</p>
   </li>
 </ul>
+<!-- <ul *ngIf="celebs" style="margin: 0px 100px;">
+  <li *ngFor="let celeb of celebs.data">
+    <img [src]="celeb.avatar" />
+    <p>{{ celeb.first_name }} {{ celeb.last_name }}</p>
+  </li>
+</ul> -->

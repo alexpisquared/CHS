@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  result = 'nothing';
+  result = 'nothing ...yet';
 
   constructor() { }
 
@@ -15,7 +15,7 @@ export class AboutComponent implements OnInit {
   }
 
   getRandom() {
-    this.result = 'https://reqres.in/api/users?page=' + (Math.floor(Math.random() * 4) + 1).toString();
+    this.result = 'Random from 1 to 4  =  ' + (Math.floor(Math.random() * 4) + 1).toString();
   }
 
 }
