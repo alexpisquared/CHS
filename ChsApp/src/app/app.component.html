@@ -1,16 +1,14 @@
 <mat-toolbar color="primary">
   <button mat-button>
     <img height="70" alt="CHS Logo" src="{{ themedIcon }}" />
-    <span style="font-size:1.2cm;">&nbsp; {{ titleBig }} &nbsp; &nbsp; &nbsp; &nbsp; </span>
+    <span style="font-size:1.2cm;">&nbsp; {{ titleBig }} </span>
   </button>
 
   <span class="horizontalSpacer"></span> <span class="horizontalSpacer"></span> <span class="horizontalSpacer"></span>
-
-  <button mat-button routerLink="/" matTooltip="About the app">Home</button>
-  <button mat-button routerLink="/clist" matTooltip="About the app">Celebs</button>
-  <button mat-button routerLink="/about" matTooltip="About the app">About</button>
-  <button mat-button (click)="toggleTheme()">Theme</button> <button mat-button routerLink="/sign-in" *ngIf="!isSignedIn">Sign in</button>
-  <button mat-button (click)="signOut()" [routerLinkActive]="['active']" *ngIf="isSignedIn">Hello, {{ userName }}! Sign out</button>
+  
+  <button mat-button (click)="toggleTheme()" matTooltip="Toggles the theme">Theme</button>
+  <button mat-button *ngIf="!isSignedIn" (click)="signIn()" routerLink="/sign-in">Sign in</button>
+  <button mat-button *ngIf="isSignedIn" (click)="signOut()" [routerLinkActive]="['active']">Hello, {{ userName }}! Sign out</button>
   <!-- 
     <app-band-status *ngIf="isSignedIn"></app-band-status> 
   -->
@@ -19,14 +17,11 @@
 
 <app-nav-top></app-nav-top>
 
-<div style="text-align:center">
-  <h1>Welcome to {{ titleTla }}!</h1>
-</div>
-
 <router-outlet></router-outlet>
 
-<button mat-button>My Butt</button>
-
 <mat-toolbar class="sidenav0-footer">
-  <span style="font-size:.3cm;"> © Copyright 2019 AAVpro Inc. </span>
+  <a mat-button target="_blank" rel="noopener" href="https://www.linkedin.com/in/alexpigida/">
+    <img height="42" alt="Alex on LinkedIn" src="\assets\images\AlexPi pro 315x315 Smooth Circle.png" />
+    <span style="font-size:.3cm;"> &nbsp; &nbsp; &nbsp; &nbsp; © Copyright 2019 AAVpro Inc. </span>
+  </a>
 </mat-toolbar>

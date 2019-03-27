@@ -46,8 +46,13 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
+  signIn(): void {
+    this.isSignedIn = true;
+    // this.signInService.signInUser();
+  }
   signOut(): void {
-    // this.signInService.signoutUser();
+    this.isSignedIn = false;
+    // this.signInService.signOutUser();
   }
 
   toggleTheme() {
