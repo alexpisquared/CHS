@@ -33,7 +33,7 @@ namespace ChsApi
       /// In a real application you would typically put the connection string in a configuration file or environment variable. 
       /// For the sake of simplicity, this tutorial has you define it in code. For more information, see 
       /// https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-strings
-      const string connection = @"Server=Server=.\sqlexpress;Database=ChsDbs;Trusted_Connection=True;ConnectRetryCount=0";
+      const string connection = @"Server=.\sqlexpress;Database=ChsDbs;Trusted_Connection=True;ConnectRetryCount=0";
       services.AddDbContext<ChsDal.Model.ChsDbsContext>(options => options.UseSqlServer(connection));
     }
 

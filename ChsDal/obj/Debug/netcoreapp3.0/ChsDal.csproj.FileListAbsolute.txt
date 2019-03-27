@@ -8,3 +8,4 @@ C:\gh\CHS\ChsDal\obj\Debug\netcoreapp3.0\ChsDal.AssemblyInfoInputs.cache
 C:\gh\CHS\ChsDal\obj\Debug\netcoreapp3.0\ChsDal.AssemblyInfo.cs
 C:\gh\CHS\ChsDal\obj\Debug\netcoreapp3.0\ChsDal.dll
 C:\gh\CHS\ChsDal\obj\Debug\netcoreapp3.0\ChsDal.pdb
+C:\gh\CHS\ChsDal\obj\Debug\netcoreapp3.0\ChsDal.csprojAssemblyReference.cache
