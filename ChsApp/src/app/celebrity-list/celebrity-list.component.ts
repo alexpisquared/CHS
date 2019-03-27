@@ -4,22 +4,22 @@ import { CelebrityDataService } from '../celebrity-data.service';
 @Component({
   selector: 'app-celebrity-list',
   templateUrl: './celebrity-list.component.html',
-  styleUrls: ['./celebrity-list.component.sass']
+  styleUrls: ['./celebrity-list.component.scss']
 })
 export class CelebrityListComponent implements OnInit {
-  h1Style = false;
-  users: object;
+  celebs: object;
 
   constructor(private data: CelebrityDataService) {}
 
   ngOnInit() {
-    this.data.getCelebs().subscribe(data => {
-      this.users = data;
-      console.log(this.users);
-    });
+    this.getCelebs();
   }
 
   getCelebs() {
-    this.data.getCelebs();
+    const page = (Math.floor(Math.random() * 4) + 1).toString();
+    this.data.getCelebs(page).subscribe(data => {
+      this.celebs = data;
+      console.log(this.celebs);
+    });
   }
 }

@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class CelebrityDataService {
   constructor(private http: HttpClient) {}
 
-  getCelebs() {
-    return this.http.get('https://reqres.in/api/users');
+  getCelebs(page) {
+    return this.http.get('https://reqres.in/api/users?page=' + page);
   }
 }
