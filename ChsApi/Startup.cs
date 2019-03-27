@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,6 +29,12 @@ namespace ChsApi
     {
       services.AddMvc()
           .AddNewtonsoftJson();
+
+      /// In a real application you would typically put the connection string in a configuration file or environment variable. 
+      /// For the sake of simplicity, this tutorial has you define it in code. For more information, see 
+      /// https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-strings
+      const string connection = @"Server=Server=.\sqlexpress;Database=ChsDbs;Trusted_Connection=True;ConnectRetryCount=0";
+      services.AddDbContext<ChsDal.Model.ChsDbsContext>(options => options.UseSqlServer(connection));
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,3 +61,10 @@ namespace ChsApi
     }
   }
 }
+/*
+  For more information, see 
+  Getting Started with EF Core on ASP.NET Core with an Existing Database
+  https://docs.microsoft.com/en-us/ef/core/get-started/aspnetcore/existing-db
+
+  Scaffold-DbContext "Server=.\sqlexpress;Database=ChsDbs;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Model
+*/
