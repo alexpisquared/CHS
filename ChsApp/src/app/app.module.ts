@@ -5,9 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { NavTopComponent } from './nav-top/nav-top.component';
+import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
+import { CelebrityListComponent } from './celebrity-list/celebrity-list.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NavTopComponent, AboutComponent, HomeComponent, CelebrityListComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule],
   providers: [],
   bootstrap: [AppComponent]
