@@ -1,0 +1,38 @@
+<!--The content below is only a placeholder and can be replaced.
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <h2>Here are some links to help you start: </h2>
+  <ul>
+    <li>
+      <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+    </li>
+  </ul>  
+-->
+
+<mat-toolbar color="primary">
+  <button mat-button>
+    <img height="70" alt="CHS Logo" src="{{ themedIcon }}" />
+    <span style="font-size:1.2cm;">&nbsp; {{ title }} &nbsp; &nbsp; &nbsp; &nbsp; </span>
+  </button>
+
+  <span class="horizontalSpacer"></span> <span class="horizontalSpacer"></span> <span class="horizontalSpacer"></span>
+
+  <button mat-button routerLink="/about" matTooltip="About the app">About</button>
+  <button mat-button (click)="toggleTheme()">Theme</button> <button mat-button routerLink="/sign-in" *ngIf="!isSignedIn">Sign in</button>
+  <button mat-button (click)="signOut()" [routerLinkActive]="['active']" *ngIf="isSignedIn">Hello, {{ userName }}! Sign out</button>
+  <!-- 
+    <app-band-status *ngIf="isSignedIn"></app-band-status> 
+  -->
+  <span class="horizontalSpacer"></span>
+</mat-toolbar>
+
+<div style="text-align:center">
+  <h1>Welcome to {{ titleTla }}!</h1>
+</div>
+
+<router-outlet></router-outlet>
+
+<button mat-button>My Butt</button>
+
+<mat-toolbar class="sidenav0-footer">
+  <span style="font-size:.3cm;"> © Copyright 2019 AAVpro Inc. </span>
+</mat-toolbar>
