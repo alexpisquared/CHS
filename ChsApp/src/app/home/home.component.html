@@ -1,16 +1,21 @@
 <div style="text-align:center">
-  <h1>Welcome to {{ titleTla }}!</h1>
+  <h2>Welcome to {{ titleTla }}!</h2>
 </div>
 <mat-grid-list cols="4" rowHeight="99%" gutterSize="6px">
   <mat-grid-tile [colspan]="1" [rowspan]="1"> </mat-grid-tile>
   <mat-grid-tile [colspan]="2" [rowspan]="1">
     <div class="full-width-top" *ngIf="!isSignedIn">
-      <!-- 
-      <form [formGroup]="_form" (ngSubmit)="onSubmit()" autocomplete="on" (appFormChanged)="onFormChanged($event)" class="full-350-500-width">
+      <form
+        [formGroup]="_form"
+        (ngSubmit)="onSubmit()"
+        autocomplete="on"
+        (appFormChanged)="onFormChanged($event)"
+        class="full-350-500-width"
+      >
         <div>
-          <h4>Sign in</h4>
+          <h4>For a better experience, please sign in</h4>
         </div>
-          <br />
+        <br />
         <br />
         <mat-form-field class="full-width">
           <input #focus0 matInput placeholder="Username" formControlName="username" [errorStateMatcher]="matcher" />
@@ -39,12 +44,10 @@
       <br />
       <br />
       <h5>{{ signInReport }}</h5>
-    -->
     </div>
     <div class="darken-1" *ngIf="isSignedIn">
       <h5>Welcome</h5>
-    </div> 
-
+    </div>
   </mat-grid-tile>
   <mat-grid-tile [colspan]="1"> </mat-grid-tile>
 </mat-grid-list>

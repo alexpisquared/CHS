@@ -3,6 +3,19 @@ div {
   overflow: auto;
 }
 
+.devops {
+  background-color: #d0f0ff;
+  margin: 12px;
+  padding: 6px;
+}
+.full-350-500-width {
+  min-width: 250px;
+  max-width: 500px;
+  width: 100%;
+}
+.full-width {
+  width: 100%;
+}
 .full-width-top {
   padding-left: 6px;
   width: 100%;
@@ -12,9 +25,11 @@ div {
   place-content: flex-start;
   align-items: flex-start;
 }
-
-.full-350-500-width {
-  min-width: 250px;
-  max-width: 500px;
-  width: 100%;
+.full-top {
+  height: 100%;
+  flex-direction: row;
+  max-height: 100%;
+  place-content: flex-start;
+  align-items: flex-start;
 }
+// layout debugging: mat-toolbar-row {  background-color: #fffff0; } mat-grid-tile {   background-color: #f0f0ff; }
