@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -6,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  signinForm: FormGroup;
 
-  titleTla = 'CHS';
-
-  constructor() { }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
-  }
+    this.signinForm = new FormGroup({ usernamme: new FormControl(), password: new FormControl() });
 
+    this.signinForm.valueChanges.subscribe(console.log);
+  }
 }

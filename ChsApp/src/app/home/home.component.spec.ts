@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
+import { FormBuilder } from '@angular/forms';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,6 +9,7 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      providers: [FormBuilder],
       declarations: [HomeComponent]
     }).compileComponents();
   }));
@@ -20,12 +22,5 @@ describe('HomeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should render titleBig in a h1 tag', () => {
-    fixture = TestBed.createComponent(HomeComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to CHS!');
   });
 });
