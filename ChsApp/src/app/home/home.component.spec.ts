@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
@@ -24,9 +24,9 @@ describe('HomeComponent', () => {
         BrowserAnimationsModule,
         NoopAnimationsModule,
         ReactiveFormsModule,
-        Router,
         RouterModule
       ],
+      providers: [FormBuilder],
       declarations: [HomeComponent]
     }).compileComponents();
   }));
