@@ -24,9 +24,21 @@ namespace ChsApi
 
     public IConfiguration Configuration { get; }
 
+    readonly string _allowSpecificOriginsPlicyName = "_someName 'Enable Cross-Origin Requests (CORS) in ASP.NET Core'"; // see more at https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-2.2
+
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
+      services.AddCors(options =>
+      {
+        options.AddPolicy(
+          _allowSpecificOriginsPlicyName,
+          builder =>
+          {
+            builder.WithOrigins("http://localHost:4200");
+          });
+      });
+
       services.AddMvc()
           .AddNewtonsoftJson();
 
@@ -49,6 +61,8 @@ namespace ChsApi
         // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
         app.UseHsts();
       }
+
+      app.UseCors(_allowSpecificOriginsPlicyName);
 
       app.UseHttpsRedirection();
 

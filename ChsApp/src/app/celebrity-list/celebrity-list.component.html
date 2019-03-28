@@ -1,18 +1,27 @@
-<button mat-fab color="primary" style="float: right; margin: 12px 100px;" mat-button (click)="getCelebs()" matTooltip="gets celebrities">
-  <mat-icon>refresh</mat-icon>
+<button mat-fab color="accent" style="float: right; margin: 12px 120px 12px 10px;" mat-button (click)="getCelebs()" matTooltip="gets celebrities">
+  <mat-icon>contacts</mat-icon>
+</button>
+<button mat-fab color="accent" style="float: right; margin: 12px 10px;" mat-button (click)="getCelebs()" matTooltip="gets celebrities">
+  <mat-icon>person</mat-icon>
 </button>
 
 <h2 style="margin: 25px 100px;">Celebrities</h2>
 
 <ul *ngIf="celebs" style="margin: 0px 100px;">
   <li *ngFor="let celeb of celebs">
-    <img [src]="celeb.HologramUrl" />
-    <p>{{ celeb.FirstName }} {{ celeb.LastName }}</p>
+    <img [src]="celeb.hologramUrl" />
+    <p>
+      {{ celeb.firstName }} {{ celeb.lastName }}
+
+      <button mat-fab color="primary" style="float: right; margin: 10px;" mat-button (click)="getCelebs()" matTooltip="Add to cart">
+        <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+    </p>
   </li>
+  <!-- 
+    <li *ngFor="let celeb of celebs.data">
+      <img [src]="celeb.avatar" />
+      <p>{{ celeb.first_name }} {{ celeb.last_name }}</p>
+    </li>
+  -->
 </ul>
-<!-- <ul *ngIf="celebs" style="margin: 0px 100px;">
-  <li *ngFor="let celeb of celebs.data">
-    <img [src]="celeb.avatar" />
-    <p>{{ celeb.first_name }} {{ celeb.last_name }}</p>
-  </li>
-</ul> -->
