@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   private _isLoading = false;
   validation_messages = {
-    username: [{ type: 'required', message: 'Please insert your username' }],
+    username: [{ type: 'required', message: 'Please enter your username' }],
     password: [
       { type: 'required', message: 'password is required' },
       { type: 'minlength', message: 'password is too short; minimum 4 characters required' }
@@ -79,7 +79,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     if (true) {
       this.isSignedIn = true;
       this.user = { username: '', password: '' };
-      this.router.navigate(['celebrity-list']);
+      this.router.navigate(['clist']);
       this.signInReport = 'Sign in successful';
     } else {
       this.isSignedIn = false;

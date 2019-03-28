@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CelebrityDataService } from '../celebrity-data.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-celebrity-list',
@@ -7,12 +8,19 @@ import { CelebrityDataService } from '../celebrity-data.service';
   styleUrls: ['./celebrity-list.component.scss']
 })
 export class CelebrityListComponent implements OnInit {
+  searchedWordsControl = new FormControl('');
   celebs: object;
+  @ViewChild('focus0') usernameField: ElementRef;
 
   constructor(private data: CelebrityDataService) {}
 
   ngOnInit() {
     this.getCelebs();
+    setTimeout(() => {
+      if (this.usernameField !== null) {
+        this.usernameField.nativeElement.focus();
+      }
+    }, 333);
   }
 
   getCelebs() {
