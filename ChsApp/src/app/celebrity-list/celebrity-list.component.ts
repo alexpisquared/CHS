@@ -16,11 +16,6 @@ export class CelebrityListComponent implements OnInit {
   celebs: object;
   @ViewChild('focus0') nameField: ElementRef;
 
-  textA0 = new FormControl('A0 - 12345 54321');
-  textA1 = new FormControl('A1 - Ab:cd:ef:gh');
-  textA2 = new FormControl('A2 - 11:22:33:44');
-  textA3 = new FormControl('A3 - 0x79172fabc');
-
   constructor(private data: CelebrityDataService) {}
 
   ngOnInit() {
@@ -53,7 +48,7 @@ export class CelebrityListComponent implements OnInit {
       console.log(this.celebs);
     });
   }
-  addToCart(){
+  addToCart() {
     console.log(' ** todo: adding to cart ** ');
   }
 }

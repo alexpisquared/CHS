@@ -6,6 +6,9 @@
 
   <span class="horizontalSpacer"></span> <span class="horizontalSpacer"></span> <span class="horizontalSpacer"></span>
 
+  <button mat-button routerLink="/" matTooltip="Go to Home page">Home</button>
+  <button mat-button routerLink="/about" matTooltip="About the app">About</button>
+
   <button mat-button (click)="toggleTheme()" matTooltip="Toggles the theme">Theme</button>
   <button mat-button *ngIf="isSignedIn" (click)="signOut()" [routerLinkActive]="['active']">Hello, {{ userName }}!   Sign out</button>
 
