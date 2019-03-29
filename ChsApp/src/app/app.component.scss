@@ -5,3 +5,8 @@
   left: 0;
   right: 0;
 }
+
+::ng-deep .selected4 {
+  background-color: #ff0;
+  color: red;
+}
