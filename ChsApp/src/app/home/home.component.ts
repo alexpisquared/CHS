@@ -79,10 +79,12 @@ export class HomeComponent implements OnInit, OnDestroy {
     if (true) {
       this.isSignedIn = true;
       this.user = { username: '', password: '' };
-      this.router.navigate(['clist']);
+      setTimeout(() => {
+        this.router.navigate(['clist']);
+      }, 1333);
       this.signInReport = 'Sign in successful';
     } else {
-      this.isSignedIn = false;
+      //this.isSignedIn = false;
       this.signInReport = 'Signed out.';
       const reason = 'Some reasonable reason';
       this.signInReport = `Sign in FAILED! ${reason}`;

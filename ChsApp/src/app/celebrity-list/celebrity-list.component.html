@@ -1,4 +1,4 @@
-<button mat-fab style="float: right; margin: 12px 120px 12px 10px;" mat-button (click)="getCelebs()" matTooltip="gets celebrities">
+<button mat-fab style="float: right; margin: 12px 120px 12px 10px;" mat-button (click)="getCelebs()" matTooltip="Show all">
   <mat-icon>contacts</mat-icon>
 </button>
 <!-- 
@@ -8,10 +8,13 @@
 -->
 
 <div style="margin: 0px 100px;">
-  <span style="font-size:1.4em;">Search Celebrities:</span>
-  <mat-form-field style="margin: 0px 10px; width: 25em;">
+  <span style="font-size:1.4em;">Celebrities:</span>
+  <mat-form-field style="margin: 0px 10px; width: 12em;">
     <input #focus0 matInput placeholder="Searched words" [formControl]="searchedWordsControl" />
   </mat-form-field>
+  <button mat-fab style="margin: 12px;" mat-button (click)="filterCelebs()" matTooltip="Apply filter">
+    <mat-icon>filter_list</mat-icon>
+  </button>
 </div>
 
 <ul *ngIf="celebs" style="margin: 0px 100px;">
