@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { Subscription } from 'rxjs';
 export class AppComponent implements OnInit, OnDestroy {
   titleBig = 'Celebrity Hologram Store';
   titleTla = 'CHS';
-  userName = 'Unknown';
+  userName = '[Entered user name]';
   isLoading: boolean; // used for showing Loading spinner during transition between pages
   isLoggingToServer: boolean;
   private subscription: Subscription;
@@ -33,8 +34,8 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
-    this.isSignedIn = true;
+  constructor(@Inject(DOCUMENT) private document: Document, private router: Router) {
+    this.isSignedIn = false;
   }
 
   ngOnInit() {
@@ -48,11 +49,13 @@ export class AppComponent implements OnInit, OnDestroy {
 
   signIn(): void {
     this.isSignedIn = true;
-    // this.signInService.signInUser();
+    setTimeout(() => {
+      this.router.navigate(['/']);
+    }, 1333);
   }
   signOut(): void {
     this.isSignedIn = false;
-    // this.signInService.signOutUser();
+    this.router.navigate(['/']);
   }
 
   toggleTheme() {

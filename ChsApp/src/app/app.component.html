@@ -7,13 +7,12 @@
   <span class="horizontalSpacer"></span> <span class="horizontalSpacer"></span> <span class="horizontalSpacer"></span>
 
   <button mat-button (click)="toggleTheme()" matTooltip="Toggles the theme">Theme</button>
-  <button mat-button *ngIf="!isSignedIn" (click)="signIn()" routerLink="/sign-in">Sign in</button>
-  <button mat-button *ngIf="isSignedIn" (click)="signOut()" [routerLinkActive]="['active']">Hello, {{ userName }}! Sign out</button>
+  <button mat-button *ngIf="isSignedIn" (click)="signOut()" [routerLinkActive]="['active']">Hello, {{ userName }}!   Sign out</button>
 
   <span class="horizontalSpacer"></span>
 </mat-toolbar>
 
-<app-nav-top></app-nav-top>
+<!-- <app-nav-top></app-nav-top> -->
 
 <router-outlet></router-outlet>
 

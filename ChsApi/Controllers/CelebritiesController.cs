@@ -19,8 +19,24 @@ namespace ChsApi.Controllers
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Celebrity>>> GetCelebrity() => await _context.Celebrity.ToListAsync();
 
+    // GET: api/Celebrities/john
+    [HttpGet("{filter}")]
+    public async Task<ActionResult<IEnumerable<Celebrity>>> GetCelebrity(string filter)
+    {
+      if (string.IsNullOrEmpty(filter))
+        return await GetCelebrity();
+      else
+      {
+        var filterToLower = filter.ToLower();
+        return await _context.Celebrity.Where(r =>
+            r.FirstName.ToLower().Contains(filterToLower) ||
+            r.LastName.ToLower().Contains(filterToLower)
+          ).ToListAsync();
+      }
+    }
+
     // GET: api/Celebrities/5
-    [HttpGet("{id}")]
+    [HttpGet("{id:int}")]
     public async Task<ActionResult<Celebrity>> GetCelebrity(int id)
     {
       var celebrity = await _context.Celebrity.FindAsync(id);

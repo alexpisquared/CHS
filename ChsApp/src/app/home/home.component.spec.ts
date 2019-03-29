@@ -1,7 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material.module';
+import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -9,7 +15,17 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule],
+      imports: [
+        FormsModule,
+        RouterTestingModule,
+        HttpClientTestingModule,
+        MaterialModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        NoopAnimationsModule,
+        ReactiveFormsModule,
+        RouterModule
+      ],
       providers: [FormBuilder],
       declarations: [HomeComponent]
     }).compileComponents();
