@@ -6,11 +6,11 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-celebrity-list',
-  templateUrl: './celebrity-list.component.html',
-  styleUrls: ['./celebrity-list.component.scss']
+  selector: 'app-celebrity-roll',
+  templateUrl: './celebrity-roll.component.html',
+  styleUrls: ['./celebrity-roll.component.scss']
 })
-export class CelebrityListComponent implements OnInit {
+export class CelebrityRollComponent implements OnInit {
   isSignedIn: boolean;
   searchedWordsControl = new FormControl('');
   searchedWords$: Observable<string[]> = this.searchedWordsControl.valueChanges.pipe(map((search: string) => search.trim().split(' ')));
@@ -20,7 +20,7 @@ export class CelebrityListComponent implements OnInit {
   constructor(private data: CelebrityDataService, private router: Router) {}
 
   ngOnInit() {
-    this.getCelebsList();
+    this.getCelebsRoll();
     setTimeout(() => {
       if (this.nameField !== null) {
         this.nameField.nativeElement.focus();
@@ -29,21 +29,16 @@ export class CelebrityListComponent implements OnInit {
     }, 333);
   }
 
-  getCelebsList() {
-    this.data.getCelebsList().subscribe(
-      data => {
-        this.celebs = data;
-        console.log(this.celebs);
-      },
-      err => {
-        console.log(` ** CL ${err}`);
-        this.router.navigate(['croll']);
-      }
-    );
+  filterCelebsRoll() {
+    const page = (Math.floor(Math.random() * 4) + 1).toString();
+    this.data.getCelebsRoll(page).subscribe(data => {
+      this.celebs = data;
+      console.log(this.celebs);
+    });
   }
-  filterCelebsList() {
+  getCelebsRoll() {
     console.log(` ** filtering by '${this.searchedWordsControl}'...`);
-    this.data.filterCelebsList(this.searchedWordsControl.value).subscribe(data => {
+    this.data.filterCelebsRoll(this.searchedWordsControl.value).subscribe(data => {
       this.celebs = data;
       console.log(this.celebs);
     });

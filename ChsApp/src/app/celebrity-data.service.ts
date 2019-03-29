@@ -10,14 +10,17 @@ import { Router } from '@angular/router';
 export class CelebrityDataService {
   constructor(private http: HttpClient, private router: Router) {}
 
-  getCelebs() {
+  getCelebsList() {
     return this.http.get('https://localhost:44382/api/Celebrities').pipe(catchError(this.handleError));
   }
-  filterCelebs(filter) {
+  filterCelebsList(filter) {
     return this.http.get(`https://localhost:44382/api/Celebrities/${filter}`).pipe(catchError(this.handleError));
   }
-  getCelebsPage(page) {
+  getCelebsRoll(page) {
     return this.http.get(`https://reqres.in/api/users?page=${page}`).pipe(catchError(this.handleError));
+  }
+  filterCelebsRoll(filter) {
+    return this.http.get(`https://reqres.in/api/users?per_page=12`).pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {

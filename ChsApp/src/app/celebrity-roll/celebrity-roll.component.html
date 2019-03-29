@@ -2,7 +2,7 @@
   <h2>Celebrities</h2>
 </div>
 
-<button mat-fab style="float: right; margin: 12px 120px 12px 10px;" mat-button (click)="getCelebsList()" matTooltip="Show all">
+<button mat-fab style="float: right; margin: 12px 120px 12px 10px;" mat-button (click)="getCelebsRoll()" matTooltip="Show all">
   <mat-icon>contacts</mat-icon>
 </button>
 
@@ -10,17 +10,17 @@
   <mat-form-field style="margin: 0px 10px; width: 12em;">
     <input #focus0 matInput placeholder="Filter by matching string[s]" [formControl]="searchedWordsControl" />
   </mat-form-field>
-  <button mat-fab style="margin: 12px;" mat-button (click)="filterCelebsList()" matTooltip="Apply filter">
+  <button mat-fab style="margin: 12px;" mat-button (click)="filterCelebsRoll()" matTooltip="Apply filter">
     <mat-icon>filter_list</mat-icon>
   </button>
 </div>
 
 <ul *ngIf="celebs" style="margin: 0px 100px;">
-  <li *ngFor="let celeb of celebs">
-    <img [src]="celeb.hologramUrl" />
+  <li *ngFor="let celeb of celebs.data">
+    <img [src]="celeb.avatar" />
     <p>
-      <span appHighlight [searchedWords]="searchedWords$ | async" [text]="celeb.firstName" classToApply="selected4"> </span> &nbsp;
-      <span appHighlight [searchedWords]="searchedWords$ | async" [text]="celeb.lastName" classToApply="selected4"> </span>
+      <span appHighlight [searchedWords]="searchedWords$ | async" [text]="celeb.first_name" classToApply="selected4"> </span> &nbsp;
+      <span appHighlight [searchedWords]="searchedWords$ | async" [text]="celeb.last_name" classToApply="selected4"> </span>
 
       <button mat-fab color="primary" style="float: right; margin: 10px;" mat-button (click)="addToCart()" matTooltip="Add to cart">
         <mat-icon>add_shopping_cart</mat-icon>
