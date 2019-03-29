@@ -1,7 +1,197 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+// @import '~src/app/custom-error/custom-error.component.theme';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// Be sure that you only ever include 'mat-core' mixin once! It should not be included for each theme.
+@include mat-core();
+
+// define a real custom palette (using http://mcg.mbitson.com)
+$aav-main-primary: (
+  50: #e0eff1,
+  100: #b3d8dc,
+  200: #80bec5,
+  300: #4da3ad,
+  400: #26909c,
+  500: #007c8a,
+  600: #007482,
+  700: #006977,
+  800: #005f6d,
+  900: #004c5a,
+  A100: #8be9ff,
+  A200: #58dfff,
+  A400: #25d6ff,
+  A700: #0cd1ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+$aav-dark-primary: (
+  50: #e6e8e9,
+  100: #c2c5c9,
+  200: #999fa5,
+  300: #707880,
+  400: #515b65,
+  500: #323e4a,
+  600: #2d3843,
+  700: #26303a,
+  800: #1f2832,
+  900: #131b22,
+  A100: #66b2ff,
+  A200: #3399ff,
+  A400: #007fff,
+  A700: #0073e6,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff
+  )
+);
+$aav-main-accent: (
+  50: #e5f7f8,
+  100: #bdecee,
+  200: #91dfe3,
+  300: #65d2d7,
+  400: #44c8cf,
+  500: #23bec6,
+  600: #1fb8c0,
+  700: #1aafb9,
+  800: #15a7b1,
+  900: #0c99a4,
+  A100: #d2fbff,
+  A200: #9ff7ff,
+  A400: #6cf3ff,
+  A700: #52f1ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+$aav-dark-accent: (
+  50: #e5f7f8,
+  100: #bdecee,
+  200: #91dfe3,
+  300: #65d2d7,
+  400: #44c8cf,
+  500: #23bec6,
+  600: #1fb8c0,
+  700: #1aafb9,
+  800: #15a7b1,
+  900: #0c99a4,
+  A100: #d2fbff,
+  A200: #9ff7ff,
+  A400: #6cf3ff,
+  A700: #52f1ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+$main-theme: mat-light-theme(mat-palette($aav-main-primary), mat-palette($aav-main-accent), mat-palette($mat-red));
+$dark-theme: mat-dark-theme(mat-palette($aav-dark-accent), mat-palette($aav-dark-primary), mat-palette($mat-red));
+@mixin mixin-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  // set body color, otherwise it is not consistent on custom error page
+  background-color: mat-color($background, background);
+  .content {
+    background-color: mat-color($background, background);
+    color: mat-color($foreground, text);
+  }
+  .footer {
+    background-color: mat-color($background, background);
+    color: mat-color($foreground, text);
+  }
+  // this is wrong since no element has class "a" :
+  .a {
+    color: mat-color($primary);
+  }
+  .accent-color {
+    color: mat-color($accent) !important;
+  }
+  .primary-color {
+    color: mat-color($primary) !important;
+  }
+}
+$background: map-get($main-theme, background);
+.footer {
+  background-color: mat-color($background, background);
+}
+.main-theme {
+  @include angular-material-theme($main-theme);
+  @include mixin-theme($main-theme);
+  // Include theme styles for your custom components.
+  // @include custom-error-component-theme($main-theme);
+}
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+  @include mixin-theme($dark-theme);
+  // Include theme styles for your custom components.
+  // @include custom-error-component-theme($dark-theme);
+}
+#containerId {
+  display: grid;
+  grid-template-columns: 70px auto;
+  height: 100%;
+}
+// html,body {...}
+body {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  // font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+  margin: 0;
+}
+
+/* You can add global styles to this file, and also import other style files */
 
 .horizontalSpacer {
   flex: 1 1 auto;
