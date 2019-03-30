@@ -1,8 +1,6 @@
 @import '~@angular/material/theming';
-// @import '~src/app/custom-error/custom-error.component.theme';
 
-// Be sure that you only ever include 'mat-core' mixin once! It should not be included for each theme.
-@include mat-core();
+@include mat-core(); // Be sure that you only ever include 'mat-core' mixin once! It should not be included for each theme.
 
 // define a real custom palette (using http://mcg.mbitson.com)
 $aav-main-primary: (
@@ -39,100 +37,101 @@ $aav-main-primary: (
 );
 
 $aav-dark-primary: (
-   50 : #f3e5fd,
-    100 : #e1bffb,
-    200 : #cd94f8,
-    300 : #b869f5,
-    400 : #a948f3,
-    500 : #9a28f1,
-    600 : #9224ef,
-    700 : #881eed,
-    800 : #7e18eb,
-    900 : #6c0fe7,
-    A100 : #ffffff,
-    A200 : #ece0ff,
-    A400 : #cdadff,
-    A700 : #be93ff,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #ffffff,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
+  50: #f3e5fd,
+  100: #e1bffb,
+  200: #cd94f8,
+  300: #b869f5,
+  400: #a948f3,
+  500: #9a28f1,
+  600: #9224ef,
+  700: #881eed,
+  800: #7e18eb,
+  900: #6c0fe7,
+  A100: #ffffff,
+  A200: #ece0ff,
+  A400: #cdadff,
+  A700: #be93ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
   )
 );
 
 $aav-main-accent: (
-   50 : #fcf0f8,
-    100 : #f8daef,
-    200 : #f4c2e4,
-    300 : #efaad9,
-    400 : #eb97d0,
-    500 : #e885c8,
-    600 : #e57dc2,
-    700 : #e272bb,
-    800 : #de68b4,
-    900 : #d855a7,
-    A100 : #ffffff,
-    A200 : #ffffff,
-    A400 : #ffd4ef,
-    A700 : #ffbbe5,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #000000,
-        500 : #000000,
-        600 : #000000,
-        700 : #000000,
-        800 : #000000,
-        900 : #000000,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
+  50: #fcf0f8,
+  100: #f8daef,
+  200: #f4c2e4,
+  300: #efaad9,
+  400: #eb97d0,
+  500: #e885c8,
+  600: #e57dc2,
+  700: #e272bb,
+  800: #de68b4,
+  900: #d855a7,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #ffd4ef,
+  A700: #ffbbe5,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
   )
 );
 $aav-dark-accent: (
- 50 : #fff4f4,
-    100 : #ffe5e5,
-    200 : #ffd3d3,
-    300 : #ffc1c1,
-    400 : #ffb4b4,
-    500 : #ffa7a7,
-    600 : #ff9f9f,
-    700 : #ff9696,
-    800 : #ff8c8c,
-    900 : #ff7c7c,
-    A100 : #ffffff,
-    A200 : #ffffff,
-    A400 : #ffffff,
-    A700 : #ffffff,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #000000,
-        500 : #000000,
-        600 : #000000,
-        700 : #000000,
-        800 : #000000,
-        900 : #000000,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,  )
+  50: #fff4f4,
+  100: #ffe5e5,
+  200: #ffd3d3,
+  300: #ffc1c1,
+  400: #ffb4b4,
+  500: #ffa7a7,
+  600: #ff9f9f,
+  700: #ff9696,
+  800: #ff8c8c,
+  900: #ff7c7c,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #ffffff,
+  A700: #ffffff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
 );
 $main-theme: mat-light-theme(mat-palette($aav-main-primary), mat-palette($aav-main-accent), mat-palette($mat-red));
 $dark-theme: mat-dark-theme(mat-palette($aav-dark-accent), mat-palette($aav-dark-primary), mat-palette($mat-red));
@@ -184,9 +183,13 @@ $background: map-get($main-theme, background);
   grid-template-columns: 70px auto;
   height: 100%;
 }
-// html,body {...}
+
+@import url('https://fonts.googleapis.com/css?family=Lobster:400,700');
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,700');
+
 body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+  // font-family: Orbitron;
   // font-family: 'Montserrat', sans-serif;
   height: 100vh;
   margin: 0;

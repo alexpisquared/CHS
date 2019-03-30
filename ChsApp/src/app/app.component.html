@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
   <button mat-button>
     <img height="70" alt="CHS Logo" src="{{ themedIcon }}" />
-    <span style="font-size:1.2cm;">&nbsp; {{ titleBig }} </span>
+    <span style="font-size:0.82cm; font-family: Orbitron;">&nbsp; {{ titleBig }} </span>
   </button>
 
   <span class="horizontalSpacer"></span> <span class="horizontalSpacer"></span> <span class="horizontalSpacer"></span>
@@ -9,8 +9,8 @@
   <button mat-button routerLink="/" matTooltip="Go to Home page">Home</button>
   <button mat-button routerLink="/about" matTooltip="About the app">About</button>
 
-  <button mat-button (click)="toggleTheme()" matTooltip="Toggles the theme">Theme</button>
   <button mat-button *ngIf="isSignedIn" (click)="signOut()" [routerLinkActive]="['active']">Hello, {{ userName }}!   Sign out</button>
+  <button mat-button (click)="toggleTheme()" matTooltip="Toggles the theme">Theme</button>
 
   <span class="horizontalSpacer"></span>
 </mat-toolbar>
