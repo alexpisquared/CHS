@@ -26,4 +26,17 @@
       </mat-card-actions>
     </mat-card>
   </mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile [colspan]="5">
+    <div class="full-width-top">
+      <h6>'Movie Stars' palette distribution: </h6>
+      <button mat-fab (click)="goBack()" style="margin: 1em;">Dflt</button>
+      <button mat-fab (click)="goBack()" style="margin: 1em;" color="accent">Acnt</button>
+      <button mat-fab (click)="goBack()" style="margin: 1em;" color="primary">Prim</button>
+      <button mat-fab (click)="goBack()" style="margin: 1em;" color="warn">Warn</button>
+      <button mat-fab (click)="goBack()" style="margin: 1em;" color="foreground">Fore</button>
+      <button mat-fab (click)="goBack()" style="margin: 1em;" color="background">Back</button>
+    </div>
+  </mat-grid-tile>
 </mat-grid-list>
