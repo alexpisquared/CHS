@@ -19,7 +19,7 @@
         <br />
         <mat-form-field class="full-width">
           <input #focus0 matInput placeholder="Username" formControlName="username" [errorStateMatcher]="matcher" />
-          <mat-error *ngFor="let validation of validation_messages.username">
+          <mat-error *ngFor="let validation of validationMessages.username">
             <mat-error class="error-message" *ngIf="hasError(validation, 'username')">{{ validation.message }}</mat-error>
           </mat-error>
         </mat-form-field>
@@ -28,7 +28,7 @@
         <mat-form-field class="full-width">
           <input #focus1 matInput placeholder="Password" formControlName="password" [type]="hide ? 'password' : 'text'" />
           <mat-icon matSuffix (click)="hide = !hide">{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
-          <mat-error *ngFor="let validation of validation_messages.password">
+          <mat-error *ngFor="let validation of validationMessages.password">
             <mat-error class="error-message" *ngIf="hasError(validation, 'password')">{{ validation.message }}</mat-error>
           </mat-error>
         </mat-form-field>

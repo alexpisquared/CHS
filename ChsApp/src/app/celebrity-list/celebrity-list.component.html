@@ -17,7 +17,9 @@
 
 <ul *ngIf="celebs" style="margin: 0px 100px;">
   <li *ngFor="let celeb of celebs">
-    <img [src]="celeb.hologramUrl" />
+    <a routerLink="/detail/{{ celeb.id }}">
+      <img [src]="celeb.hologramUrl" />
+    </a>
     <p>
       <span appHighlight [searchedWords]="searchedWords$ | async" [text]="celeb.firstName" classToApply="selected4"> </span> &nbsp;
       <span appHighlight [searchedWords]="searchedWords$ | async" [text]="celeb.lastName" classToApply="selected4"> </span>

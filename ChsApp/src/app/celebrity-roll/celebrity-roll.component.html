@@ -17,7 +17,9 @@
 
 <ul *ngIf="celebs" style="margin: 0px 100px;">
   <li *ngFor="let celeb of celebs.data">
-    <img [src]="celeb.avatar" />
+    <a routerLink="/factor/{{ celeb.id }}">
+      <img [src]="celeb.avatar" />
+    </a>
     <p>
       <span appHighlight [searchedWords]="searchedWords$ | async" [text]="celeb.first_name" classToApply="selected4"> </span> &nbsp;
       <span appHighlight [searchedWords]="searchedWords$ | async" [text]="celeb.last_name" classToApply="selected4"> </span>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-about',
@@ -8,13 +9,19 @@ import { Component, OnInit } from '@angular/core';
 export class AboutComponent implements OnInit {
   result = 'Result : nothing ...yet';
 
-  constructor() {}
+  constructor(private location: Location) {}
 
   ngOnInit() {
     this.getRandom();
   }
 
   getRandom() {
-    this.result = 'Random from 1 to 4  =>  ' + (Math.floor(Math.random() * 4) + 1).toString();
+    this.result = `There is a number between 0 and 100000000, and believe it or not but it is   ${Math.floor(
+      Math.random() * 100000000
+    )}`;
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

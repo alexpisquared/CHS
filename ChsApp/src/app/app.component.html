@@ -17,7 +17,22 @@
 
 <!-- <app-nav-top></app-nav-top> -->
 
-<router-outlet></router-outlet>
+<mat-sidenav-container style="height: 80%;">
+  <!--  // todo: <mat-sidenav #sidenav mode="side" [(opened)]="!isSignedIn"> -->
+  <mat-sidenav #sidenav mode="side">
+    <mat-nav-list>
+      <div style="margin: 20px; color: #aaa; display:run-in">
+        <mat-icon mat-list-icon>nfc</mat-icon><br /><br />
+        <mat-icon mat-list-icon>domain</mat-icon><br /><br />
+        <mat-icon mat-list-icon>edit</mat-icon>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
 
 <mat-toolbar class="sidenav0-footer">
   <a mat-button target="_blank" rel="noopener" href="https://www.linkedin.com/in/alexpigida/">

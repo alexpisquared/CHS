@@ -23,6 +23,19 @@ export class CelebrityDataService {
     return this.http.get(`https://reqres.in/api/users?per_page=12`).pipe(catchError(this.handleError));
   }
 
+  getDetail(id: number): any {
+    throw new Error('Method not implemented.');
+  }
+  updateDetail(factor: import ('./model/factor').Factor): any {
+    throw new Error('Method not implemented.');
+  }
+  getFactor(id: number): any {
+    return this.http.get(`https://reqres.in/api/users/${id}`).pipe(catchError(this.handleError));
+  }
+  updateFactor(factor: import ('./model/factor').Factor): any {
+    throw new Error('Method not implemented.');
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.

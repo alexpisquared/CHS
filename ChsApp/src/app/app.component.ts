@@ -19,7 +19,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private mainTheme = 'main-theme';
   private darkTheme = 'dark-theme';
   themedIcon = './favicon.ico';
-  isSignedIn: boolean;
+  isSignedIn = false;
 
   get themeVal(): string {
     let returnValue = localStorage.getItem(this.themeKey);
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   constructor(@Inject(DOCUMENT) private document: Document, private router: Router) {
-    this.isSignedIn = false;
+    // this.isSignedIn = false;
   }
 
   ngOnInit() {
@@ -52,7 +52,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.isSignedIn = true;
     setTimeout(() => {
       this.router.navigate(['/']);
-    }, 1333);
+    }, 3333);
   }
   signOut(): void {
     this.isSignedIn = false;

@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   hide = true;
   private subscription: Subscription;
   private _isLoading = false;
-  validation_messages = {
+  validationMessages = {
     username: [{ type: 'required', message: 'Please enter your username' }],
     password: [
       { type: 'required', message: 'password is required' },
@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       if (this.usernameField !== null) {
         this.usernameField.nativeElement.focus();
       }
-    }, 333);
+    }, 2333);
   }
 
   reset() {

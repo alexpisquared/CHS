@@ -3,13 +3,15 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AboutComponent } from './about.component';
 import { MaterialModule } from '../material/material.module';
 
+import { RouterTestingModule } from '@angular/router/testing'; // no provider for location!!!
+
 describe('AboutComponent', () => {
   let component: AboutComponent;
   let fixture: ComponentFixture<AboutComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MaterialModule],
+      imports: [MaterialModule, RouterTestingModule],
       declarations: [AboutComponent]
     }).compileComponents();
   }));
@@ -20,7 +22,7 @@ describe('AboutComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create ?', () => {
     expect(component).toBeTruthy();
   });
 });

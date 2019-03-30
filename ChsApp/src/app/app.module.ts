@@ -13,9 +13,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HighlightDirective } from './highlight.directive';
 import { CelebrityRollComponent } from './celebrity-roll/celebrity-roll.component';
+import { CelebrityDetailComponent } from './celebrity-detail/celebrity-detail.component';
+import { CelebrityFactorComponent } from './celebrity-factor/celebrity-factor.component';
 
 @NgModule({
-  declarations: [AppComponent, NavTopComponent, AboutComponent, HomeComponent, CelebrityListComponent, HighlightDirective, CelebrityRollComponent],
+  declarations: [AppComponent, NavTopComponent, AboutComponent, HomeComponent, CelebrityListComponent, HighlightDirective, CelebrityRollComponent, CelebrityDetailComponent, CelebrityFactorComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
