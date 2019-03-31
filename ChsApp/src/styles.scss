@@ -4,39 +4,6 @@
 
 // define a real custom palette (using http://mcg.mbitson.com)
 $aav-main-primary: (
-  50: #ebe5f6,
-  100: #ccbfe8,
-  200: #aa95d9,
-  300: #886aca,
-  400: #6f4abe,
-  500: #552ab3,
-  600: #4e25ac,
-  700: #441fa3,
-  800: #3b199a,
-  900: #2a0f8b,
-  A100: #c8bcff,
-  A200: #9f89ff,
-  A400: #7556ff,
-  A700: #603cff,
-  contrast: (
-    50: #000000,
-    100: #000000,
-    200: #000000,
-    300: #ffffff,
-    400: #ffffff,
-    500: #ffffff,
-    600: #ffffff,
-    700: #ffffff,
-    800: #ffffff,
-    900: #ffffff,
-    A100: #000000,
-    A200: #000000,
-    A400: #ffffff,
-    A700: #ffffff
-  )
-);
-
-$aav-dark-primary: (
   50: #f3e5fd,
   100: #e1bffb,
   200: #cd94f8,
@@ -69,7 +36,7 @@ $aav-dark-primary: (
   )
 );
 
-$aav-main-accent: (
+$aav-dark-primary: (
   50: #fcf0f8,
   100: #f8daef,
   200: #f4c2e4,
@@ -101,7 +68,8 @@ $aav-main-accent: (
     A700: #000000
   )
 );
-$aav-dark-accent: (
+
+$aav-main-accent: (
   50: #fff4f4,
   100: #ffe5e5,
   200: #ffd3d3,
@@ -131,6 +99,38 @@ $aav-dark-accent: (
     A200: #000000,
     A400: #000000,
     A700: #000000
+  )
+);
+$aav-dark-accent: (
+  50: #ebe5f6,
+  100: #ccbfe8,
+  200: #aa95d9,
+  300: #886aca,
+  400: #6f4abe,
+  500: #552ab3,
+  600: #4e25ac,
+  700: #441fa3,
+  800: #3b199a,
+  900: #2a0f8b,
+  A100: #c8bcff,
+  A200: #9f89ff,
+  A400: #7556ff,
+  A700: #603cff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff
   )
 );
 $main-theme: mat-light-theme(mat-palette($aav-main-primary), mat-palette($aav-main-accent), mat-palette($mat-red));
