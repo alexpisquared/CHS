@@ -35,11 +35,10 @@ export class AppComponent implements OnInit, OnDestroy {
     console.log(` ** theme just set to : ${localStorage.getItem(this.themeKey)}`);
   }
 
-  constructor(@Inject(DOCUMENT) private document: Document, private router: Router) {
-    // this.isSignedIn = false;
-  }
+  constructor(@Inject(DOCUMENT) private document: Document, private router: Router) {}
 
   ngOnInit() {
+    this.isSignedIn = false;
     this.setThemeToStoredValue();
   }
   ngOnDestroy(): void {
