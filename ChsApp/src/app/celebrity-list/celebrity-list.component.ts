@@ -37,7 +37,7 @@ export class CelebrityListComponent implements OnInit {
       },
       err => {
         console.log(` ** CL ${err}`);
-        this.router.navigate(['croll']);
+        this.router.navigate(['/croll']);
       }
     );
   }
