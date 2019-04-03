@@ -2,6 +2,7 @@ import { AfterViewInit, Component, Inject, OnDestroy, OnInit } from '@angular/co
 import { DOCUMENT } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { AuthService } from './service/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent implements OnInit, OnDestroy {
   titleBig = 'Celebrity Hologram Store';
   titleTla = 'CHS';
   userName = '[Entered user name]';
-  isLoading: boolean; // used for showing Loading spinner during transition between pages
+  IsLoading: boolean; // used for showing Loading spinner during transition between pages
   isLoggingToServer: boolean;
   private subscription: Subscription;
   private themeKey = 'themeKey';
@@ -35,10 +36,11 @@ export class AppComponent implements OnInit, OnDestroy {
     console.log(` ** theme just set to : ${localStorage.getItem(this.themeKey)}`);
   }
 
-  constructor(@Inject(DOCUMENT) private document: Document, private router: Router) {}
+  constructor(@Inject(DOCUMENT) private document: Document, private router: Router, private auth: AuthService) {}
 
   ngOnInit() {
-    this.isSignedIn = false;
+    this.isSignedIn = this.auth.getLastIsSignIn();
+    this.userName = this.isSignedIn ? this.auth.getLastUsername() : '';
     this.setThemeToStoredValue();
   }
   ngOnDestroy(): void {
@@ -55,6 +57,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
   signOut(): void {
     this.isSignedIn = false;
+    this.auth.SignOut();
     this.router.navigate(['/']);
   }
 

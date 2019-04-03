@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Factor } from '../model/factor';
-import { CelebrityDataService } from '../celebrity-data.service';
+import { CelebrityDataService } from '../service/celebrity-data.service';
 
 @Component({
   selector: 'app-celebrity-factor',

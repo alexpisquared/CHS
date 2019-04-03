@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'detail/:id', component: CelebrityDetailComponent },
   { path: 'factor/:id', component: CelebrityFactorComponent },
   { path: 'clist', component: CelebrityListComponent },
-  { path: 'croll', component: CelebrityRollComponent }
+  { path: 'croll', component: CelebrityRollComponent },
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({

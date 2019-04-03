@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { CelebrityDataService } from '../celebrity-data.service';
+import { CelebrityDataService } from '../service/celebrity-data.service';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -17,7 +17,7 @@ export class CelebrityListComponent implements OnInit {
   celebs: object;
   @ViewChild('focus0') nameField: ElementRef;
 
-  constructor(private data: CelebrityDataService, private router: Router) {}
+  constructor(private router: Router, private data: CelebrityDataService) {}
 
   ngOnInit() {
     this.getCelebsList();

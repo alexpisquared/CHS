@@ -10,7 +10,7 @@ export class NavTopComponent implements OnInit {
   titleBig = 'Celebrity Hologram Store';
   titleTla = 'CHS';
   userName = 'Unknown';
-  isLoading: boolean; // used for showing Loading spinner during transition between pages
+  IsLoading: boolean; // used for showing Loading spinner during transition between pages
 
   constructor() {}
 

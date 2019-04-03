@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { CelebrityDataService } from '../celebrity-data.service';
+import { CelebrityDataService } from '../service/celebrity-data.service';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -31,10 +31,16 @@ export class CelebrityRollComponent implements OnInit {
 
   filterCelebsRoll() {
     const page = (Math.floor(Math.random() * 4) + 1).toString();
-    this.data.getCelebsRoll(page).subscribe(data => {
-      this.celebs = data;
-      console.log(this.celebs);
-    });
+    this.data.getCelebsRoll(page).subscribe(
+      data => {
+        this.celebs = data;
+        console.log(this.celebs);
+      },
+      err => {
+        this.router.navigate(['clist']);
+        console.log(` ** CL ${err}`);
+      }
+    );
   }
   getCelebsRoll() {
     console.log(` ** filtering by '${this.searchedWordsControl}'...`);

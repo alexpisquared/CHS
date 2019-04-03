@@ -4,11 +4,12 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { NavTopComponent } from './nav-top/nav-top.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, MaterialModule, BrowserAnimationsModule], // tu: karma errors without MaterialModule!!!
+      imports: [RouterTestingModule, MaterialModule, BrowserAnimationsModule, HttpClientTestingModule],
       declarations: [AppComponent, NavTopComponent] // tu: for app-nav-top
     }).compileComponents();
   }));

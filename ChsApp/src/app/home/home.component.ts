@@ -1,10 +1,14 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { UserCredential } from './userCredential';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { FormControl, FormGroupDirective, NgForm, Validators, FormBuilder } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material';
 import { HttpErrorResponse } from '@angular/common/http';
+import { AuthService } from '../service/auth.service';
+
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { UserCredential } from '../model/userCredential';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -26,7 +30,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   isSignedIn: boolean;
   hide = true;
   private subscription: Subscription;
-  private _isLoading = false;
+  private isLoading = false;
   validationMessages = {
     username: [{ type: 'required', message: 'Please enter your username' }],
     password: [
@@ -42,14 +46,14 @@ export class HomeComponent implements OnInit, OnDestroy {
   @ViewChild('focus0') usernameField: ElementRef;
   @ViewChild('focus1') passwordField: ElementRef;
 
-  get isLoading(): boolean {
-    return this._isLoading;
+  get IsLoading(): boolean {
+    return this.isLoading;
   }
-  set isLoading(theValue: boolean) {
-    this._isLoading = theValue;
+  set IsLoading(theValue: boolean) {
+    this.isLoading = theValue;
   }
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router, private auth: AuthService) {}
 
   ngOnInit() {
     this.reset();
@@ -71,23 +75,24 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    this.isLoading = true;
+    this.IsLoading = true;
     this.user.username = this._form.value.username;
     this.user.password = this._form.value.password;
-    this.isLoading = false;
 
-    if (true) {
-      this.isSignedIn = true;
+    const errormsg = this.auth.SignIn(this.user.username, this.user.password);
+    this.isSignedIn = errormsg.length === 0;
+
+    this.IsLoading = false;
+
+    if (this.isSignedIn) {
       this.user = { username: '', password: '' };
       setTimeout(() => {
         this.router.navigate(['clist']);
       }, 1333);
       this.signInReport = 'Sign in successful';
     } else {
-      //this.isSignedIn = false;
       this.signInReport = 'Signed out.';
-      const reason = 'Some reasonable reason';
-      this.signInReport = `Sign in FAILED! ${reason}`;
+      this.signInReport = `Sign in FAILED! ${errormsg}`;
       setTimeout(() => {
         if (this.passwordField !== null) {
           this.passwordField.nativeElement.focus();
