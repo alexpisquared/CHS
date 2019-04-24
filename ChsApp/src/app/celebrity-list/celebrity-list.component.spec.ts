@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HighlightDirective } from '../highlight.directive';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { CelebrityDataServiceBase, CelebrityDataServiceMock } from '../service/celebrity-data.service';
 
 describe('CelebrityListComponent', () => {
   let component: CelebrityListComponent;
@@ -29,7 +30,7 @@ describe('CelebrityListComponent', () => {
         RouterTestingModule
       ],
       declarations: [CelebrityListComponent, HighlightDirective],
-      providers: [FormBuilder]
+      providers: [FormBuilder, { provide: CelebrityDataServiceBase, useClass: CelebrityDataServiceMock }]
     }).compileComponents();
   }));
 

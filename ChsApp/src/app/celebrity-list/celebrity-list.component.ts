@@ -17,7 +17,7 @@ export class CelebrityListComponent implements OnInit {
   celebs: object;
   @ViewChild('focus0') nameField: ElementRef;
 
-  constructor(private router: Router, private data: CelebrityDataService) {}
+  constructor(private router: Router, private dataSvc: CelebrityDataService) {}
 
   ngOnInit() {
     this.getCelebsList();
@@ -30,7 +30,7 @@ export class CelebrityListComponent implements OnInit {
   }
 
   getCelebsList() {
-    this.data.getCelebsList().subscribe(
+    this.dataSvc.getCelebsList().subscribe(
       data => {
         this.celebs = data;
         console.log(this.celebs);
@@ -43,7 +43,7 @@ export class CelebrityListComponent implements OnInit {
   }
   filterCelebsList() {
     console.log(` ** filtering by '${this.searchedWordsControl}'...`);
-    this.data.filterCelebsList(this.searchedWordsControl.value).subscribe(data => {
+    this.dataSvc.filterCelebsList(this.searchedWordsControl.value).subscribe(data => {
       this.celebs = data;
       console.log(this.celebs);
     });
