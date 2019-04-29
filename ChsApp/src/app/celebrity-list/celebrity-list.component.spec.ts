@@ -19,16 +19,7 @@ describe('CelebrityListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       //  1/2  Can't bind to 'formControl' since it isn't a known property of 'input'.
-      imports: [
-        HttpClientModule,
-        MaterialModule,
-        ReactiveFormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        BrowserAnimationsModule,
-        RouterModule,
-        RouterTestingModule
-      ],
+      imports: [HttpClientModule, MaterialModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, BrowserAnimationsModule, RouterModule, RouterTestingModule],
       declarations: [CelebrityListComponent, HighlightDirective],
       providers: [FormBuilder, { provide: CelebrityDataServiceBase, useClass: CelebrityDataServiceMock }]
     }).compileComponents();
