@@ -66,10 +66,8 @@ namespace ChsApi
 
       app.UseHttpsRedirection();
 
-      app.UseRouting(routes =>
-      {
-        routes.MapControllers();
-      });
+      app.UseRouting(//routes => { routes.MapControllers(); } <= not like that in the latest code gen on new app. Jul 2019.
+        );
 
       app.UseAuthorization();
     }

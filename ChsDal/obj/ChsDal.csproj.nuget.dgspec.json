@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\gh\\CHS\\ChsDal\\ChsDal.csproj": {}
+    "C:\\gh\\aav\\CHS\\ChsDal\\ChsDal.csproj": {}
   },
   "projects": {
-    "C:\\gh\\CHS\\ChsDal\\ChsDal.csproj": {
+    "C:\\gh\\aav\\CHS\\ChsDal\\ChsDal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\gh\\CHS\\ChsDal\\ChsDal.csproj",
+        "projectUniqueName": "C:\\gh\\aav\\CHS\\ChsDal\\ChsDal.csproj",
         "projectName": "ChsDal",
-        "projectPath": "C:\\gh\\CHS\\ChsDal\\ChsDal.csproj",
+        "projectPath": "C:\\gh\\aav\\CHS\\ChsDal\\ChsDal.csproj",
         "packagesPath": "C:\\Users\\alexp\\.nuget\\packages\\",
-        "outputPath": "C:\\gh\\CHS\\ChsDal\\obj\\",
+        "outputPath": "C:\\gh\\aav\\CHS\\ChsDal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -27,13 +27,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.0": {
@@ -63,25 +57,29 @@
               "target": "Package",
               "version": "[2.2.3, )"
             },
-            "Microsoft.NETCore.Platforms": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.0.0-preview3.19128.7, )",
-              "autoReferenced": true
-            },
-            "Microsoft.WindowsDesktop.App": {
+            "Microsoft.NETCore.App": {
               "include": "None",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.0.0-preview3-27504-2, )",
+              "version": "[3.0.0-preview7-27912-14, )",
               "autoReferenced": true
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          }
         }
       }
     }
