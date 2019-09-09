@@ -15,7 +15,6 @@ C:\gh\aav\CHS\ChsDal\bin\Debug\netcoreapp3.0\ChsDal.runtimeconfig.dev.json
 C:\gh\aav\CHS\ChsDal\bin\Debug\netcoreapp3.0\ChsDal.dll
 C:\gh\aav\CHS\ChsDal\bin\Debug\netcoreapp3.0\ChsDal.pdb
 C:\gh\aav\CHS\ChsDal\obj\Debug\netcoreapp3.0\ChsDal.csprojAssemblyReference.cache
-C:\gh\aav\CHS\ChsDal\obj\Debug\netcoreapp3.0\ChsDal.csproj.CoreCompileInputs.cache
 C:\gh\aav\CHS\ChsDal\obj\Debug\netcoreapp3.0\ChsDal.AssemblyInfoInputs.cache
 C:\gh\aav\CHS\ChsDal\obj\Debug\netcoreapp3.0\ChsDal.AssemblyInfo.cs
 C:\gh\aav\CHS\ChsDal\obj\Debug\netcoreapp3.0\ChsDal.dll
