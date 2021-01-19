@@ -15,7 +15,7 @@ export class CelebrityListComponent implements OnInit {
   searchedWordsControl = new FormControl('');
   searchedWords$: Observable<string[]> = this.searchedWordsControl.valueChanges.pipe(map((search: string) => search.trim().split(' ')));
   celebs: object;
-  @ViewChild('focus0') nameField: ElementRef;
+  @ViewChild('focus0', { static: true }) nameField: ElementRef;
 
   constructor(private router: Router, private dataSvc: CelebrityDataService) {}
 

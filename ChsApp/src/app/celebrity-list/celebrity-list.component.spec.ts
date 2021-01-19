@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CelebrityListComponent } from './celebrity-list.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,7 +16,7 @@ describe('CelebrityListComponent', () => {
   let component: CelebrityListComponent;
   let fixture: ComponentFixture<CelebrityListComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       //  1/2  Can't bind to 'formControl' since it isn't a known property of 'input'.
       imports: [HttpClientModule, MaterialModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, BrowserAnimationsModule, RouterModule, RouterTestingModule],

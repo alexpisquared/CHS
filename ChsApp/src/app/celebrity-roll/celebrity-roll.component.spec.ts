@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CelebrityRollComponent } from './celebrity-roll.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,7 +15,7 @@ describe('CelebrityRollComponent', () => {
   let component: CelebrityRollComponent;
   let fixture: ComponentFixture<CelebrityRollComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       //  1/2  Can't bind to 'formControl' since it isn't a known property of 'input'.
       imports: [

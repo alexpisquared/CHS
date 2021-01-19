@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { NavTopComponent } from './nav-top.component';
 import { MaterialModule } from '../material/material.module';
@@ -7,7 +7,7 @@ describe('NavTopComponent', () => {
   let component: NavTopComponent;
   let fixture: ComponentFixture<NavTopComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [MaterialModule], // tu: karma errors without MaterialModule!!!
       declarations: [NavTopComponent]
