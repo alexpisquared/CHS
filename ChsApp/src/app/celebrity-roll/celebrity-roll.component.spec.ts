@@ -1,11 +1,12 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CelebrityRollComponent } from './celebrity-roll.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../material/material.module';
 import { FormBuilder } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HighlightDirective } from '../highlight.directive';
 import { Router, RouterModule } from '@angular/router';
@@ -15,7 +16,7 @@ describe('CelebrityRollComponent', () => {
   let component: CelebrityRollComponent;
   let fixture: ComponentFixture<CelebrityRollComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       //  1/2  Can't bind to 'formControl' since it isn't a known property of 'input'.
       imports: [

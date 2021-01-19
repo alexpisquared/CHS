@@ -15,7 +15,7 @@ export class CelebrityRollComponent implements OnInit {
   searchedWordsControl = new FormControl('');
   searchedWords$: Observable<string[]> = this.searchedWordsControl.valueChanges.pipe(map((search: string) => search.trim().split(' ')));
   celebs: object;
-  @ViewChild('focus0') nameField: ElementRef;
+  @ViewChild('focus0', { static: true }) nameField: ElementRef;
 
   constructor(private data: CelebrityDataService, private router: Router) {}
 
